@@ -62,3 +62,51 @@ Measures_IMAU_Mast.jpeg  photo of the measurement mast
 ```
 
 The column definitions are in `source/Data_Tower_project_1-4_15oct2026/fileformat_headers.md`, background literature in `source/Data_Tower_projects_1-4_8oct2026_/MAIO_background&iterature.md`.
+
+## Using this repository on your own PC
+
+### One-time setup
+
+1. Install Git from <https://git-scm.com/downloads> (on Windows keep the default options). Alternatively, install [GitHub Desktop](https://desktop.github.com/) if you prefer buttons over commands; the steps below map to its *Clone*, *Fetch/Pull*, *Commit* and *Push* buttons.
+2. Tell Git who you are (once per PC):
+
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "you@example.com"
+   ```
+
+3. To push changes you need write access: ask the repository owner to add your GitHub account under *Settings → Collaborators*. Reading and cloning works without it.
+4. Clone the repository into a folder of your choice:
+
+   ```bash
+   git clone https://github.com/nashathur/MAIO-Tower-Project.git
+   cd MAIO-Tower-Project
+   ```
+
+   The first push asks you to sign in to GitHub in the browser.
+
+### Daily workflow
+
+Always get the latest version before you start working:
+
+```bash
+git pull
+```
+
+After changing or adding files, check what changed, then save and upload it:
+
+```bash
+git status
+git add <file or folder>
+git commit -m "Short description of what you changed"
+git push
+```
+
+If `git push` is rejected because someone else pushed first, run `git pull` and then `git push` again. If `git pull` reports a conflict, open the listed files, keep the right lines between the `<<<<<<<` and `>>>>>>>` markers, remove the markers, then `git add` the files and `git commit`.
+
+### Tips
+
+- Pull before you start and push when you finish, so everyone works on the latest files.
+- Work on separate files (e.g. one script or notebook each) to avoid conflicts; notebooks (`.ipynb`) and Word files are hard to merge when two people edit them at once.
+- Commit small, related changes with a clear message; it makes the history readable.
+- Do not commit large generated files or personal data; add them to `.gitignore` instead.
