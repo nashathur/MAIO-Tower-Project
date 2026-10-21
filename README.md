@@ -45,12 +45,39 @@ u* follows from the covariances as u\* = (uw² + vw²)^¼.
 
 ## Known data issues
 
-- **iWS thermocouples**: `TC1avg` and `TC2avg` in `iws.csv` jump between about 50 and 330 °C, so they are not usable; 327.67 is a fill value in several iWS columns. Reported to the supervisor.
+- **iWS thermocouples**: `TC1avg` and `TC2avg` in `iws.csv` jump between about 30 and 330 °C, so they are not usable; 327.67 is a fill value in several iWS columns. Reported to the supervisor.
 - **iWS housing**: the nylon housing is slightly translucent, so solar radiation heats the iWS T and RH/T sensors (T sensor > T air, RH chamber < RH air), mostly by day.
 - **CNR1 temperature bias**: the CNR1 body temperature was biased until 28-09-2026 13:00–13:30 LT, when an offset resistor in the logger was replaced. `LWTopC_Avg_biased` and `LWBottomC_Avg_biased` use a rough +3 °C correction; comparing with the CNR4 could estimate the real bias.
 - **Time zones**: iWS times are UTC and are shifted to CEST to match the other loggers.
 - **Flow distortion**: the mast and neighbouring sensors disturb the wind for some directions; check sensor ratios against wind direction.
-- **Data periods**: profile, iWS and CNR1 run from 15 Sep to 12 Oct 2026 (with raw CNR1 and 1-min profile data from 8 Sep); the flux files from 15 Sep to 12 Oct 2026.
+- **Data periods**: all files cover 15 Sep to 12 Oct 2026. `cnr1raw.csv` and `profile1min.csv` start on 8 Sep, but their values are invalid until 15 Sep 14:01 (see below).
+
+## Problems found in the data
+
+Found while converting and checking the files in `data/`. Times are as stored in each file.
+
+| File | Problem | Suggested handling |
+|---|---|---|
+| `iws.csv` | The radiometer calibration constants (`NRUcal`, `NRLcal`, `NRIUcal`, `NRILcal`) and `NRID` change at 22 Sep 00:00, from 10.1/20.2/10.1/10.1 to 13.76/14.76/9.85/11.38. At the same moment the median CNR4/CNR1 shortwave-in ratio drops from 1.04 to 0.82. | Do not combine CNR4 radiation from before and after 22 Sep without a correction; ask the supervisor which constants are right. |
+| `iws.csv` | Gaps from 16 Sep 13:00 to 14:00 and from 21 Sep 12:00 to 22 Sep 00:00. | Leave as missing. |
+| `iws.csv` | `TC1avg`/`TC2avg` range from 29.7 to 327.67 °C (327.67 occurs 232 and 80 times); `xTSTR1`–`xTSTR8` are always 327.67. | Do not use; use `THUTavg` for the iWS temperature. |
+| `iws.csv` | The format doc lists 71 columns, the file has 70. The data matches the doc up to `VBAT` (column 54). | Columns after `VBAT` are named in doc order; `xSTATUS` is left out. Do not rely on them. |
+| `profile1min.csv`, `cnr1raw.csv` | Values before 15 Sep 14:01 are installation values (e.g. T about −100 °C, negative RH and radiation): 21 and 141 rows. | Drop rows before 15 Sep 14:01. |
+| `profile.csv` | Wind speed `U1`–`U5` is missing until 16 Sep 16:30 (52 rows). | Start wind comparisons on 16 Sep 16:30. |
+| `cnr1.csv` | Invalid values (e.g. SW in −22959 W m⁻²) at 15 Sep 14:30 (first record) and 28 Sep 14:00 (logger repair). | Drop these two records. |
+| `FLUX_30min.csv` | Timestamp 1 Oct 00:30 occurs twice. | Keep one; check which. |
+| `FLUX_30min.csv` | Thermocouple `Tc` has 8 values above 310 K (37 °C) on 9 Oct, while `Ts` stays normal; usually Tc − Ts is −1.0 to +0.4 K. | Filter Tc spikes before comparing. |
+| `FLUX_CORR_30min.csv` | The 14 Oct delivery was reprocessed: all values differ from the 12 Oct version (mean v and w are now about zero after coordinate rotation). It starts at 15 Sep 00:00 with 29 empty rows. | Use the 14 Oct version (in `data/`); the old one is in `source/`. |
+| `turb.csv` | `uH2O`, `vH2O`, `wH2O`, `std_H2O`, `H2O` are empty (no humidity sensor on the sonic). | Ignore. |
+
+Problems in the documentation:
+
+- `cnr1.txt` is described as "1mins averaged", but its records are 30 minutes apart.
+- `profile1min.txt` has no format description; it has the same 25 columns as `profile.txt`.
+- The FLUX header doc ends with `wgTc2`; the files have `wgT2` and `T2T2`.
+- `turb.txt` uses the same names twice (`ww`, `uw`, `w`, `u` for both the sonic and the propellers); in `turb.csv` the propeller ones have a `_prop` suffix.
+- The units in the iWS column list show `?` where a degree sign should be, e.g. `TC1avg (?C)`.
+- The thermocouple Tc2 height is not given anywhere.
 
 ## Repository layout
 
