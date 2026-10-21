@@ -1,11 +1,17 @@
 """Convert the tower .txt data in source/ to CSV files with headers in data/.
 
+Only the newest delivery of each file is converted, to data/<name>.csv;
+later deliveries contain the earlier data (FLUX_CORR_30min was reprocessed
+in the 14 Oct delivery but still covers the whole period).
+
 Column names follow the fileformat_headers docs delivered with the data.
 Values are copied unchanged (NaN stays NaN). FLUX files already carry
 their own header and are copied as they are.
 
 Run: conda run -n college python txt_to_csv.py
 """
+import re
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -89,13 +95,24 @@ def convert(src: Path, dst: Path, header: list[str] | None) -> int:
     return len(lines) - 1
 
 
+def delivery_date(folder: Path) -> datetime:
+    """Date in a delivery folder name, e.g. Data_Tower_project_1-4_15oct2026."""
+    m = re.search(r"(\d{1,2}[a-z]{3}\d{4})", folder.name)
+    return datetime.strptime(m.group(1), "%d%b%Y")
+
+
 def main() -> None:
-    for src in sorted(SOURCE.rglob("*.txt")):
+    latest: dict[str, Path] = {}
+    for src in SOURCE.rglob("*.txt"):
         if src.name not in HEADERS:
             raise KeyError(f"no header defined for {src.name}")
-        dst = DATA / src.relative_to(SOURCE).with_suffix(".csv")
-        rows = convert(src, dst, HEADERS[src.name])
-        print(f"{dst.relative_to(ROOT)}: {rows} rows")
+        prev = latest.get(src.name)
+        if prev is None or delivery_date(src.parent) > delivery_date(prev.parent):
+            latest[src.name] = src
+    for name, src in sorted(latest.items()):
+        dst = DATA / Path(name).with_suffix(".csv")
+        rows = convert(src, dst, HEADERS[name])
+        print(f"{dst.relative_to(ROOT)}: {rows} rows from {src.parent.name}")
 
 
 if __name__ == "__main__":
