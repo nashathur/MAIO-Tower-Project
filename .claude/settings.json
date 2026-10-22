@@ -1,0 +1,13 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "includeCoAuthoredBy": false,
+  "env": {
+    "GIT_AUTHOR_NAME": "Thursina Ahsan",
+    "GIT_AUTHOR_EMAIL": "thursina.muhammad@gmail.com",
+    "GIT_COMMITTER_NAME": "Thursina Ahsan",
+    "GIT_COMMITTER_EMAIL": "thursina.muhammad@gmail.com"
+  }
+}
