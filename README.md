@@ -22,11 +22,11 @@ The tower has five measurement levels at logarithmically increasing heights, nom
 |---|---|---|---|
 | Vaisala HMP110 | Direct air temperature | 0.4, 1.0, 2.0, 3.9, 7.0 | Mechanically ventilated, shielded (shield type differs between the low levels and 4 m/top; to confirm) |
 | iWS temperature sensor and RH/T sensor | Direct temperature | 3.75 | Unventilated, inside the nylon iWS housing |
-| Fine-wire thermocouples Tc and Tc2 | Thermoelectric voltage | 3.0 (Tc), probably about 3 (Tc2) | None |
+| Fine-wire thermocouples Tc and Tc2 | Thermoelectric voltage | 3.0 (Tc), about 3 (Tc2) | None |
 | Sonic anemometer (CSAT3) | Speed of sound (sonic temperature Ts) | 3.0 | None |
 | CNR1 and CNR4 radiometers | Radiometer body temperature | about 4 | Sun shield |
 
-Wind is measured by the sonic anemometer, a fast Young propeller vane beside it, a vertical propeller and the profile propeller vanes (Young 05103); radiation by the CNR1 (large MAIO logger, on the 4 m crossbar) and CNR4 (iWS station) net radiometers.
+Wind is measured by the sonic anemometer, a fast Young propeller vane and a vertical propeller beside it (all at about 3 m), and the profile propeller vanes (Young 05103); radiation by the CNR1 (large MAIO logger, on the 4 m crossbar) and CNR4 (iWS station) net radiometers.
 
 ## Approach
 
