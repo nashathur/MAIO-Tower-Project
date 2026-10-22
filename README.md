@@ -89,7 +89,7 @@ Problems in the documentation:
 ## Repository layout
 
 ```
-src/maio_tower/  Python package: load(name) reads a CSV from data/
+src/maio_tower/  Python package: load(name) reads a CSV from data/, load_txt(name, delivery) an original txt from source/
 pyproject.toml   package definition (pip install)
 source/      raw data deliveries as received (txt files, column format docs as .docx and .md)
 data/        latest delivery of each data file as CSV with column headers
@@ -121,7 +121,15 @@ profile = maio_tower.load("profile")  # data/profile.csv as a pandas DataFrame
 iws = maio_tower.load("iws")
 ```
 
-Extra arguments to `load` go to `pandas.read_csv`. To get data pushed after you installed, restart the Colab runtime and reinstall with `--force-reinstall --no-deps` added.
+The original `.txt` files in `source/` are included too. `load_txt` reads one from a chosen delivery (the latest that has the file when `delivery` is left out); files without a header row get the column names of the matching CSV:
+
+```python
+print(maio_tower.DELIVERIES)                        # '8oct', '12oct', '14oct', '15oct'
+profile_8oct = maio_tower.load_txt("profile", "8oct")
+flux_12oct = maio_tower.load_txt("FLUX_30min", "12oct")
+```
+
+Extra arguments to `load` and `load_txt` go to `pandas.read_csv`. To get data pushed after you installed, restart the Colab runtime and reinstall with `--force-reinstall --no-deps` added.
 
 In a local clone, `pip install -e .` installs the package so that it reads `data/` in the clone directly; `pip install -e ".[notebooks]"` also installs Jupyter.
 

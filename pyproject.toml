@@ -22,6 +22,7 @@ packages = ["src/maio_tower"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "data" = "maio_tower/data"
+"source" = "maio_tower/source"
 
 [tool.hatch.build.targets.sdist]
-include = ["src/maio_tower", "data", "README.md"]
+include = ["src/maio_tower", "data", "source", "README.md"]
