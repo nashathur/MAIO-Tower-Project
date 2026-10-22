@@ -212,16 +212,12 @@
       <text x="826" y="220" fill="#c0392b">rh1 … rh5</text>
       <text x="826" y="242" fill="#1d4ed8">U1 … U5</text>
       <text x="826" y="264" fill="#1d4ed8">dd1 … dd5</text>
-      <text x="826" y="286" fill="#6b7280">Ubatt, Ptemp</text>
     </g>
     <text x="960" y="198">air temperature (°C)</text>
     <text x="960" y="220">relative humidity (%)</text>
     <text x="960" y="242">wind speed (m s⁻¹)</text>
     <text x="960" y="264">wind direction (°)</text>
-    <text x="960" y="286">logger battery (V), panel temperature</text>
-    <text x="826" y="316" fill="#4b5563">Index 1 = top (T 700.5, U 729 cm) … 5 = bottom (T 31–44, U 57.5 cm).</text>
-    <text x="826" y="336" fill="#4b5563">The 1-min file has the same 25 columns; drop rows before 15 Sep 14:01.</text>
-    <text x="826" y="356" fill="#4b5563">Wind U1–U5 missing until 16 Sep 16:30.</text>
+    <text x="826" y="294" fill="#4b5563">Index 1 = top (T 700.5, U 729 cm) … 5 = bottom (T 31–44, U 57.5 cm).</text>
 
     <!-- Card 2: sonic -->
     <rect x="1300" y="80" width="480" height="345" rx="10" fill="#ffffff" stroke="#d1d5db"/>
@@ -244,8 +240,7 @@
     <text x="1480" y="286">temperature variances</text>
     <text x="1326" y="314" font-weight="700">turb.csv <tspan font-weight="400" fill="#4b5563">(raw logger output, T in °C)</tspan></text>
     <text x="1326" y="334" font-family="Consolas, monospace" font-size="12" fill="#0f766e" font-weight="700">u v w Ts Tc1 · uu … ww · uTc1 vTc1 wTc1 · std_Ts std_Tc1</text>
-    <text x="1326" y="354" fill="#4b5563">H2O columns empty (no humidity sensor on the sonic).</text>
-    <text x="1326" y="374" fill="#4b5563">u* = (uw² + vw²)^¼. Tc mostly missing from 29 Sep.</text>
+    <text x="1326" y="360" fill="#4b5563">u* = (uw² + vw²)^¼</text>
 
     <!-- Card 3: fast propellers -->
     <rect x="800" y="440" width="480" height="345" rx="10" fill="#ffffff" stroke="#d1d5db"/>
@@ -269,8 +264,7 @@
     <text x="826" y="674" font-weight="700">turb.csv <tspan font-weight="400" fill="#4b5563">(propeller columns, suffix _prop)</tspan></text>
     <text x="826" y="694" font-family="Consolas, monospace" font-size="12" fill="#be185d" font-weight="700">u_vect dd_vect std_dd · u_prop w_prop dd · Tc2</text>
     <text x="826" y="712" font-family="Consolas, monospace" font-size="12" fill="#be185d" font-weight="700">ww_prop wu uw_prop wTc2 uTc2 TcTc2</text>
-    <text x="826" y="742" fill="#4b5563">Header doc says wgTc2; the files have wgT2 and T2T2.</text>
-    <text x="826" y="762" fill="#4b5563">Vane and vertical propeller beside the sonic, ≈ 3 m (photos).</text>
+    <text x="826" y="742" fill="#4b5563">Vane and vertical propeller beside the sonic, ≈ 3 m (photos).</text>
 
     <!-- Card 4: iWS -->
     <rect x="1300" y="440" width="480" height="345" rx="10" fill="#ffffff" stroke="#d1d5db"/>
@@ -286,8 +280,6 @@
       <text x="1326" y="624">HWDavg</text>
       <text x="1326" y="646">BAP</text>
       <text x="1326" y="668">SSH</text>
-      <text x="1326" y="690">TILTX, TILTY</text>
-      <text x="1326" y="712" fill="#9ca3af">TC1avg, TC2avg</text>
     </g>
     <text x="1470" y="558">air temperature, unventilated (°C)</text>
     <text x="1470" y="580">RH (%), RH-sensor temperature (°C)</text>
@@ -295,10 +287,7 @@
     <text x="1470" y="624">wind direction (°)</text>
     <text x="1470" y="646">air pressure (hPa)</text>
     <text x="1470" y="668">sensor height (m): mean 3.75</text>
-    <text x="1470" y="690">tilt (°): mean 0.6, −1.0</text>
-    <text x="1470" y="712" fill="#9ca3af">thermocouples: unusable (30–328 °C)</text>
-    <text x="1326" y="742" fill="#4b5563">Also carries the CNR4 columns (card 5). 327.67 = fill value.</text>
-    <text x="1326" y="762" fill="#4b5563">Gaps: 16 Sep 13–14 h, 21 Sep 12 h – 22 Sep 00 h.</text>
+    <text x="1326" y="698" fill="#4b5563">Also carries the CNR4 columns (card 5).</text>
 
     <!-- Card 5: radiation -->
     <rect x="800" y="800" width="480" height="350" rx="10" fill="#ffffff" stroke="#d1d5db"/>
@@ -324,13 +313,10 @@
       <text x="826" y="1050">NRUavg, NRLavg</text>
       <text x="826" y="1070">NRIUavg, NRILavg</text>
       <text x="826" y="1090">NRTavg</text>
-      <text x="826" y="1110">NRUcal … NRILcal</text>
     </g>
     <text x="1080" y="1050">SW in, SW out</text>
     <text x="1080" y="1070">LW in, LW out</text>
     <text x="1080" y="1090">body temperature (°C)</text>
-    <text x="1080" y="1110">calibration (changes 22 Sep)</text>
-    <text x="826" y="1136" fill="#4b5563">CNR1 body T biased until 28 Sep 13:00–13:30 LT.</text>
 
     <!-- Card 6: unknowns -->
     <rect x="1300" y="800" width="480" height="350" rx="10" fill="#fffbeb" stroke="#f59e0b"/>
@@ -352,7 +338,6 @@
       <text x="1326" y="1081">• Compass directions of the profile booms not recorded.</text>
       <text x="1326" y="1101">• Nominal "8 m" level is ≈ 7.0–7.3 m, "4 m" ≈ 3.8–4.1 m,</text>
       <text x="1338" y="1116">"1 m" ≈ 1.0–1.25 m, "0.5 m" ≈ 0.3–0.6 m.</text>
-      <text x="1326" y="1136">• Wind spacings match the sketch's 68/93/193 cm within 1 cm.</text>
     </g>
   </g>
 </svg>
