@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1220" viewBox="0 0 800 1220" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <g id="shield">
       <rect x="-15" y="-22" width="30" height="22" rx="3" fill="#fde8e6" stroke="#c0392b" stroke-width="2"/>
@@ -29,128 +29,127 @@
     <g id="cnr"><rect x="-16" y="-4" width="32" height="8" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/><ellipse cx="0" cy="-7" rx="7" ry="4" fill="#7c3aed"/></g>
   </defs>
 
-  <rect width="1600" height="900" fill="#ffffff"/>
+  <rect width="800" height="1220" fill="#ffffff"/>
 
-  <text x="60" y="62" font-size="34" font-weight="700" fill="#111827">MAIO flux mast</text>
-  <text x="60" y="92" font-size="17" fill="#4b5563">Utrecht Science Park · sensor heights above ground</text>
+  <text x="40" y="52" font-size="32" font-weight="700" fill="#111827">MAIO flux mast</text>
+  <text x="40" y="80" font-size="16" fill="#4b5563">Utrecht Science Park · sensor heights above ground</text>
 
-  <!-- height axis -->
-  <g font-size="14" fill="#9ca3af" stroke="#d1d5db">
-    <line x1="150" y1="840" x2="150" y2="140"/>
-    <line x1="144" y1="840" x2="156" y2="840"/><line x1="144" y1="740" x2="156" y2="740"/><line x1="144" y1="640" x2="156" y2="640"/><line x1="144" y1="540" x2="156" y2="540"/>
-    <line x1="144" y1="440" x2="156" y2="440"/><line x1="144" y1="340" x2="156" y2="340"/><line x1="144" y1="240" x2="156" y2="240"/><line x1="144" y1="140" x2="156" y2="140"/>
+  <!-- height axis: 1 m = 100 px, ground at y = 860 -->
+  <g font-size="13" fill="#9ca3af" stroke="#d1d5db">
+    <line x1="80" y1="860" x2="80" y2="160"/>
+    <line x1="74" y1="860" x2="86" y2="860"/><line x1="74" y1="760" x2="86" y2="760"/><line x1="74" y1="660" x2="86" y2="660"/><line x1="74" y1="560" x2="86" y2="560"/>
+    <line x1="74" y1="460" x2="86" y2="460"/><line x1="74" y1="360" x2="86" y2="360"/><line x1="74" y1="260" x2="86" y2="260"/><line x1="74" y1="160" x2="86" y2="160"/>
     <g stroke="none" text-anchor="end">
-      <text x="136" y="845">0 m</text><text x="136" y="745">1 m</text><text x="136" y="645">2 m</text><text x="136" y="545">3 m</text>
-      <text x="136" y="445">4 m</text><text x="136" y="345">5 m</text><text x="136" y="245">6 m</text><text x="136" y="145">7 m</text>
+      <text x="66" y="865">0 m</text><text x="66" y="765">1 m</text><text x="66" y="665">2 m</text><text x="66" y="565">3 m</text>
+      <text x="66" y="465">4 m</text><text x="66" y="365">5 m</text><text x="66" y="265">6 m</text><text x="66" y="165">7 m</text>
     </g>
   </g>
 
   <!-- ground -->
-  <rect x="170" y="840" width="830" height="22" fill="#dcfce7"/>
-  <line x1="170" y1="840" x2="1000" y2="840" stroke="#4d7c0f" stroke-width="3"/>
+  <rect x="95" y="860" width="670" height="20" fill="#dcfce7"/>
+  <line x1="95" y1="860" x2="765" y2="860" stroke="#4d7c0f" stroke-width="3"/>
   <g stroke="#65a30d" stroke-width="2">
-    <path d="M200,840 l-4,-9 M206,840 l2,-10 M380,840 l-4,-9 M386,840 l2,-10 M760,840 l-4,-9 M766,840 l2,-10 M900,840 l-4,-9 M906,840 l2,-10"/>
+    <path d="M130,860 l-4,-9 M136,860 l2,-10 M300,860 l-4,-9 M306,860 l2,-10 M600,860 l-4,-9 M606,860 l2,-10 M720,860 l-4,-9 M726,860 l2,-10"/>
   </g>
 
   <!-- mast -->
-  <rect x="514" y="111" width="12" height="729" rx="2" fill="#9ca3af"/>
+  <rect x="374" y="131" width="12" height="729" rx="2" fill="#9ca3af"/>
 
-  <!-- T/RH booms (left) -->
+  <!-- T/RH booms (left) and sonic -->
   <g stroke="#374151" stroke-width="4" stroke-linecap="round">
-    <line x1="400" y1="809" x2="514" y2="809"/>
-    <line x1="400" y1="744" x2="514" y2="744"/>
-    <line x1="400" y1="649" x2="514" y2="649"/>
-    <line x1="400" y1="457.5" x2="514" y2="457.5"/>
-    <line x1="450" y1="139.5" x2="514" y2="139.5"/>
-    <line x1="445" y1="536.5" x2="514" y2="536.5"/>
+    <line x1="270" y1="829" x2="374" y2="829"/>
+    <line x1="270" y1="764" x2="374" y2="764"/>
+    <line x1="270" y1="669" x2="374" y2="669"/>
+    <line x1="270" y1="477.5" x2="374" y2="477.5"/>
+    <line x1="320" y1="159.5" x2="374" y2="159.5"/>
+    <line x1="305" y1="556.5" x2="374" y2="556.5"/>
   </g>
-  <use href="#shield" x="400" y="809"/>
-  <use href="#shield" x="400" y="744"/>
-  <use href="#shield" x="400" y="649"/>
-  <use href="#shield" x="400" y="457.5"/>
-  <use href="#shield" x="450" y="139.5"/>
-  <use href="#sonic" x="445" y="536.5"/>
-  <!-- fast vane beside the sonic -->
-  <line x1="526" y1="545" x2="590" y2="545" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
-  <line x1="590" y1="545" x2="590" y2="526" stroke="#374151" stroke-width="3"/>
-  <use href="#vanef" x="590" y="520"/>
-  <text x="626" y="527" font-size="19" font-weight="700" fill="#be185d">3.0 m</text>
-  <!-- CNR1 on the 4 m crossbar -->
-  <use href="#cnr" x="585" y="461"/>
-  <text x="585" y="484" font-size="13" font-weight="700" fill="#7c3aed" text-anchor="middle">CNR1</text>
+  <use href="#shield" x="270" y="829"/>
+  <use href="#shield" x="270" y="764"/>
+  <use href="#shield" x="270" y="669"/>
+  <use href="#shield" x="270" y="477.5"/>
+  <use href="#shield" x="320" y="159.5"/>
+  <use href="#sonic" x="305" y="556.5"/>
 
   <g font-size="19" font-weight="700" text-anchor="end" fill="#c0392b">
-    <text x="370" y="804">0.4 m</text>
-    <text x="370" y="739">1.0 m</text>
-    <text x="370" y="644">2.0 m</text>
-    <text x="370" y="452">3.9 m</text>
-    <text x="420" y="134">7.0 m</text>
+    <text x="243" y="824">0.4 m</text>
+    <text x="243" y="759">1.0 m</text>
+    <text x="243" y="664">2.0 m</text>
+    <text x="243" y="472">3.9 m</text>
+    <text x="293" y="154">7.0 m</text>
   </g>
-  <text x="385" y="543" font-size="19" font-weight="700" text-anchor="end" fill="#0f766e">3.0 m</text>
+  <text x="250" y="563" font-size="19" font-weight="700" text-anchor="end" fill="#0f766e">3.0 m</text>
 
   <!-- wind booms (right) -->
   <g stroke="#374151" stroke-width="4" stroke-linecap="round">
-    <line x1="526" y1="809" x2="640" y2="809"/><line x1="640" y1="809" x2="640" y2="782.5"/>
-    <line x1="526" y1="744" x2="640" y2="744"/><line x1="640" y1="744" x2="640" y2="715"/>
-    <line x1="526" y1="649" x2="640" y2="649"/><line x1="640" y1="649" x2="640" y2="622"/>
-    <line x1="526" y1="457.5" x2="640" y2="457.5"/><line x1="640" y1="457.5" x2="640" y2="428"/>
-    <line x1="526" y1="113" x2="580" y2="113"/>
+    <line x1="386" y1="829" x2="500" y2="829"/><line x1="500" y1="829" x2="500" y2="802.5"/>
+    <line x1="386" y1="764" x2="500" y2="764"/><line x1="500" y1="764" x2="500" y2="735"/>
+    <line x1="386" y1="669" x2="500" y2="669"/><line x1="500" y1="669" x2="500" y2="642"/>
+    <line x1="386" y1="477.5" x2="500" y2="477.5"/><line x1="500" y1="477.5" x2="500" y2="448"/>
+    <line x1="386" y1="133" x2="440" y2="133"/>
   </g>
-  <use href="#vane" x="640" y="782.5"/>
-  <use href="#vane" x="640" y="715"/>
-  <use href="#vane" x="640" y="622"/>
-  <use href="#vane" x="640" y="428"/>
-  <use href="#vane" x="580" y="104"/>
+  <use href="#vane" x="500" y="802.5"/>
+  <use href="#vane" x="500" y="735"/>
+  <use href="#vane" x="500" y="642"/>
+  <use href="#vane" x="500" y="448"/>
+  <use href="#vane" x="440" y="124"/>
   <g font-size="19" font-weight="700" fill="#1d4ed8">
-    <text x="676" y="789">0.6 m</text>
-    <text x="676" y="721">1.25 m</text>
-    <text x="676" y="628">2.2 m</text>
-    <text x="676" y="434">4.1 m</text>
-    <text x="616" y="110">7.3 m</text>
+    <text x="536" y="809">0.6 m</text>
+    <text x="536" y="741">1.25 m</text>
+    <text x="536" y="648">2.2 m</text>
+    <text x="536" y="454">4.1 m</text>
+    <text x="476" y="130">7.3 m</text>
   </g>
+
+  <!-- fast vane beside the sonic -->
+  <line x1="386" y1="565" x2="450" y2="565" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+  <line x1="450" y1="565" x2="450" y2="546" stroke="#374151" stroke-width="3"/>
+  <use href="#vanef" x="450" y="540"/>
+  <text x="486" y="547" font-size="19" font-weight="700" fill="#be185d">3.0 m</text>
+
+  <!-- CNR1 on the 4 m crossbar -->
+  <use href="#cnr" x="445" y="481"/>
+  <text x="445" y="504" font-size="13" font-weight="700" fill="#7c3aed" text-anchor="middle">CNR1</text>
 
   <!-- side booms at ~4 m -->
-  <line x1="526" y1="465" x2="720" y2="320" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 5"/>
-  <circle cx="526" cy="465" r="5" fill="#ea580c"/>
-  <rect x="700" y="190" width="300" height="140" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-  <text x="850" y="218" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">Side booms at ≈ 4 m</text>
-  <line x1="725" y1="258" x2="975" y2="258" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
-  <use href="#iws" x="765" y="258"/>
-  <line x1="845" y1="258" x2="845" y2="242" stroke="#374151" stroke-width="3"/>
-  <use href="#vane" x="845" y="236"/>
-  <use href="#cnr" x="935" y="266"/>
-  <text x="725" y="292" font-size="14" fill="#374151">SW: <tspan fill="#ea580c" font-weight="700">iWS 3.75 m</tspan>, vane, <tspan fill="#7c3aed" font-weight="700">CNR4</tspan></text>
-  <text x="725" y="314" font-size="14" fill="#374151"><tspan fill="#7c3aed" font-weight="700">CNR1</tspan>: end of the 4 m crossbar</text>
+  <line x1="386" y1="485" x2="500" y2="322" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 5"/>
+  <circle cx="386" cy="485" r="5" fill="#ea580c"/>
+  <rect x="480" y="186" width="290" height="136" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="625" y="212" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">Side booms at ≈ 4 m</text>
+  <line x1="500" y1="252" x2="750" y2="252" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+  <use href="#iws" x="540" y="252"/>
+  <line x1="625" y1="252" x2="625" y2="236" stroke="#374151" stroke-width="3"/>
+  <use href="#vane" x="625" y="230"/>
+  <use href="#cnr" x="715" y="260"/>
+  <text x="498" y="287" font-size="14" fill="#374151">SW: <tspan fill="#ea580c" font-weight="700">iWS 3.75 m</tspan>, vane, <tspan fill="#7c3aed" font-weight="700">CNR4</tspan></text>
+  <text x="498" y="309" font-size="14" fill="#374151"><tspan fill="#7c3aed" font-weight="700">CNR1</tspan>: end of the 4 m crossbar</text>
 
-  <!-- legend -->
-  <g>
-    <text x="1080" y="160" font-size="20" font-weight="700" fill="#111827">Instruments</text>
+  <!-- legend, two columns below the mast -->
+  <text x="40" y="922" font-size="19" font-weight="700" fill="#111827">Instruments</text>
 
-    <use href="#shield" x="1110" y="226"/>
-    <text x="1160" y="214" font-size="19" font-weight="700" fill="#c0392b">Air temperature and humidity</text>
-    <text x="1160" y="238" font-size="15" fill="#4b5563">Vaisala HMP110, ventilated shield · 5 levels</text>
+  <use href="#shield" x="70" y="967"/>
+  <text x="110" y="955" font-size="17" font-weight="700" fill="#c0392b">Air temperature and humidity</text>
+  <text x="110" y="976" font-size="13.5" fill="#4b5563">Vaisala HMP110, ventilated shield · 5 levels</text>
 
-    <use href="#vane" x="1110" y="300"/>
-    <text x="1160" y="298" font-size="19" font-weight="700" fill="#1d4ed8">Wind speed and direction</text>
-    <text x="1160" y="322" font-size="15" fill="#4b5563">Young 05103 propeller vane · 5 levels</text>
+  <use href="#vane" x="70" y="1033"/>
+  <text x="110" y="1032" font-size="17" font-weight="700" fill="#1d4ed8">Wind speed and direction</text>
+  <text x="110" y="1053" font-size="13.5" fill="#4b5563">Young 05103 propeller vane · 5 levels</text>
 
-    <use href="#sonic" x="1130" y="384"/>
-    <text x="1160" y="382" font-size="19" font-weight="700" fill="#0f766e">Sonic anemometer + thermocouple</text>
-    <text x="1160" y="406" font-size="15" fill="#4b5563">Campbell CSAT3 · fast (10 Hz) wind and temperature</text>
+  <use href="#vanef" x="70" y="1110"/>
+  <text x="110" y="1109" font-size="17" font-weight="700" fill="#be185d">Fast propeller vane</text>
+  <text x="110" y="1130" font-size="13.5" fill="#4b5563">Young vane sampled at 10 Hz, beside the sonic</text>
 
-    <use href="#iws" x="1110" y="466"/>
-    <text x="1160" y="466" font-size="19" font-weight="700" fill="#ea580c">iWS weather station</text>
-    <text x="1160" y="490" font-size="15" fill="#4b5563">Unventilated T, RH, wind, pressure</text>
+  <use href="#sonic" x="460" y="960"/>
+  <text x="480" y="955" font-size="17" font-weight="700" fill="#0f766e">Sonic + thermocouple</text>
+  <text x="480" y="976" font-size="13.5" fill="#4b5563">CSAT3 · fast (10 Hz) wind and temperature</text>
 
-    <use href="#cnr" x="1110" y="552"/>
-    <text x="1160" y="550" font-size="19" font-weight="700" fill="#7c3aed">Net radiometers CNR1 and CNR4</text>
-    <text x="1160" y="574" font-size="15" fill="#4b5563">Shortwave and longwave, in and out</text>
+  <use href="#iws" x="440" y="1037"/>
+  <text x="480" y="1032" font-size="17" font-weight="700" fill="#ea580c">iWS weather station</text>
+  <text x="480" y="1053" font-size="13.5" fill="#4b5563">Unventilated T, RH, wind, pressure</text>
 
-    <use href="#vanef" x="1110" y="636"/>
-    <text x="1160" y="634" font-size="19" font-weight="700" fill="#be185d">Fast propeller vane</text>
-    <text x="1160" y="658" font-size="15" fill="#4b5563">Young vane sampled at 10 Hz, beside the sonic</text>
+  <use href="#cnr" x="440" y="1114"/>
+  <text x="480" y="1109" font-size="17" font-weight="700" fill="#7c3aed">Net radiometers</text>
+  <text x="480" y="1130" font-size="13.5" fill="#4b5563">CNR1 and CNR4 · SW and LW, in and out</text>
 
-    <text x="1080" y="720" font-size="14" fill="#6b7280">Heights measured on site, rounded.</text>
-    <text x="1080" y="740" font-size="14" fill="#6b7280">Vertical scale true, horizontal not to scale.</text>
-  </g>
+  <text x="40" y="1182" font-size="13" fill="#6b7280">Heights measured on site, rounded. Vertical scale true, horizontal not to scale.</text>
 </svg>
