@@ -143,6 +143,13 @@
     <text x="476" y="703" fill="#be185d" font-weight="700">Fast Young vane <tspan fill="#111827" font-weight="600">≈ 300 cm</tspan></text>
     <text x="476" y="718" fill="#6b7280" font-size="11">beside the sonic (photo, ± 20 cm)</text>
   </g>
+  <!-- Vertical propeller + Tc2 against the mast (setup photo) -->
+  <use href="#prop" x="403" y="742"/>
+  <circle cx="416" cy="738" r="3" fill="#be185d"/>
+  <g font-size="13.5">
+    <text x="476" y="742" fill="#be185d" font-weight="700">Vertical propeller + Tc2 <tspan fill="#111827" font-weight="600">≈ 300 cm</tspan></text>
+    <text x="476" y="757" fill="#6b7280" font-size="11">against the mast, faces up (setup photo)</text>
+  </g>
 
   <!-- CNR1 on the 4 m crossbar (photo) -->
   <use href="#cnr" x="445" y="606"/>
@@ -161,16 +168,6 @@
     <text x="600" y="678" fill="#6b7280">(not on the installation photos)</text>
   </g>
 
-  <!-- Fast propellers, position unknown -->
-  <rect x="70" y="300" width="270" height="92" rx="8" fill="#fdf2f8" stroke="#be185d" stroke-width="1.5" stroke-dasharray="6 4"/>
-  <use href="#prop" x="98" y="348"/>
-  <circle cx="120" cy="364" r="3" fill="#be185d"/>
-  <g font-size="12.5">
-    <text x="132" y="324" fill="#be185d" font-weight="700">Vertical propeller + Tc2</text>
-    <text x="132" y="344" fill="#374151">not identified on the photos;</text>
-    <text x="132" y="360" fill="#374151">probably near the fast vane</text>
-    <text x="132" y="376" fill="#374151">(≈ 3 m), height not measured</text>
-  </g>
 
   <!-- Top view inset -->
   <rect x="440" y="250" width="330" height="270" rx="10" fill="#f9fafb" stroke="#d1d5db"/>
@@ -273,7 +270,7 @@
     <text x="826" y="694" font-family="Consolas, monospace" font-size="12" fill="#be185d" font-weight="700">u_vect dd_vect std_dd · u_prop w_prop dd · Tc2</text>
     <text x="826" y="712" font-family="Consolas, monospace" font-size="12" fill="#be185d" font-weight="700">ww_prop wu uw_prop wTc2 uTc2 TcTc2</text>
     <text x="826" y="742" fill="#4b5563">Header doc says wgTc2; the files have wgT2 and T2T2.</text>
-    <text x="826" y="762" fill="#4b5563">Vane beside the sonic, ≈ 3 m (photo); vertical propeller not identified.</text>
+    <text x="826" y="762" fill="#4b5563">Vane and vertical propeller beside the sonic, ≈ 3 m (photos).</text>
 
     <!-- Card 4: iWS -->
     <rect x="1300" y="440" width="480" height="345" rx="10" fill="#ffffff" stroke="#d1d5db"/>
@@ -343,8 +340,8 @@
       <text x="1338" y="866">sensing element height inside it unknown. T1: not noted.</text>
       <text x="1326" y="886">• Sonic + Tc 79 cm below the 4 m boom; photo scaling gives</text>
       <text x="1338" y="901">0.8–1.0 m. Tc assumed at the sonic's height.</text>
-      <text x="1326" y="921">• Fast vane ≈ 3 m beside the sonic (photo, ± 20 cm);</text>
-      <text x="1338" y="936">vertical propeller and Tc2 not identified.</text>
+      <text x="1326" y="921">• Fast vane, vertical propeller, Tc2 ≈ 3 m beside the sonic</text>
+      <text x="1338" y="936">(photos, ± 20 cm); exact heights not measured.</text>
       <text x="1326" y="956">• iWS and CNR4 not on the installation photos;</text>
       <text x="1338" y="971">iWS height 3.62–3.80 m from its own SSH; CNR4 "about 4 m".</text>
       <text x="1326" y="991">• Shields differ: white plate shields at 0.5–2 m, cylindrical</text>
