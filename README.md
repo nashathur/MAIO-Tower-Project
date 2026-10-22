@@ -48,7 +48,7 @@ u* follows from the covariances as u\* = (uw² + vw²)^¼.
 - **iWS thermocouples**: `TC1avg` and `TC2avg` in `iws.csv` jump between about 30 and 330 °C, so they are not usable; 327.67 is a fill value in several iWS columns. Reported to the supervisor.
 - **iWS housing**: the nylon housing is slightly translucent, so solar radiation heats the iWS T and RH/T sensors (T sensor > T air, RH chamber < RH air), mostly by day.
 - **CNR1 temperature bias**: the CNR1 body temperature was biased until 28-09-2026 13:00–13:30 LT, when an offset resistor in the logger was replaced. `LWTopC_Avg_biased` and `LWBottomC_Avg_biased` use a rough +3 °C correction; comparing with the CNR4 could estimate the real bias.
-- **Time zones**: iWS times are UTC and are shifted to CEST to match the other loggers.
+- **Time zones**: iWS times are UTC; the profile mast, CNR1, turb and FLUX files are CEST. All loggers stamp a 30-min average at the end of its interval. Checked against solar noon (11:29 UTC in Utrecht) and by lagged correlation; `notebooks/temperature_plots.ipynb` shows the shifts used.
 - **Flow distortion**: the mast and neighbouring sensors disturb the wind for some directions; check sensor ratios against wind direction.
 - **Data periods**: all files cover 15 Sep to 12 Oct 2026. `cnr1raw.csv` and `profile1min.csv` start on 8 Sep, but their values are invalid until 15 Sep 14:01 (see below).
 
@@ -65,8 +65,9 @@ Found while converting and checking the files in `data/`. Times are as stored in
 | `profile1min.csv`, `cnr1raw.csv` | Values before 15 Sep 14:01 are installation values (e.g. T about −100 °C, negative RH and radiation): 21 and 141 rows. | Drop rows before 15 Sep 14:01. |
 | `profile.csv` | Wind speed `U1`–`U5` is missing until 16 Sep 16:30 (52 rows). | Start wind comparisons on 16 Sep 16:30. |
 | `cnr1.csv` | Invalid values (e.g. SW in −22959 W m⁻²) at 15 Sep 14:30 (first record) and 28 Sep 14:00 (logger repair). | Drop these two records. |
+| `profile.csv` | The first record (15 Sep 14:30) is invalid: temperatures about −25 °C, RH about 17 %. | Drop it. |
 | `FLUX_30min.csv` | Timestamp 1 Oct 00:30 occurs twice. | Keep one; check which. |
-| `FLUX_30min.csv` | Thermocouple `Tc` has 8 values above 310 K (37 °C) on 9 Oct, while `Ts` stays normal; usually Tc − Ts is −1.0 to +0.4 K. | Filter Tc spikes before comparing. |
+| `FLUX_30min.csv` | Thermocouple `Tc` is mostly missing from 29 Sep onward (no data on 1, 4–6, 10 and 11 Oct) and has spikes 5 to 63 K above `Ts` on 9 and 12 Oct; usually Tc − Ts is −1.0 to +0.4 K. | Remove Tc values more than 3 K from Ts; compare Tc mainly before 29 Sep. |
 | `FLUX_CORR_30min.csv` | The 14 Oct delivery was reprocessed: all values differ from the 12 Oct version (mean v and w are now about zero after coordinate rotation). It starts at 15 Sep 00:00 with 29 empty rows. | Use the 14 Oct version (in `data/`); the old one is in `source/`. |
 | `turb.csv` | `uH2O`, `vH2O`, `wH2O`, `std_H2O`, `H2O` are empty (no humidity sensor on the sonic). | Ignore. |
 
@@ -84,6 +85,8 @@ Problems in the documentation:
 ```
 source/      raw data deliveries as received (txt files, column format docs as .docx and .md)
 data/        latest delivery of each data file as CSV with column headers
+notebooks/   analysis notebooks (temperature_plots.ipynb: time series of all temperature sensors)
+figures/     figures saved by the notebooks
 Project_1_Fluxmast_Temperature_sensors_2026.*  project assignment
 Measures_IMAU_Mast.jpeg  photo of the measurement mast
 ```
