@@ -48,7 +48,7 @@ u* follows from the covariances as u\* = (uw² + vw²)^¼.
 - **iWS thermocouples**: `TC1avg` and `TC2avg` in `iws.csv` jump between about 30 and 330 °C, so they are not usable; 327.67 is a fill value in several iWS columns. Reported to the supervisor.
 - **iWS housing**: the nylon housing is slightly translucent, so solar radiation heats the iWS T and RH/T sensors (T sensor > T air, RH chamber < RH air), mostly by day.
 - **CNR1 temperature bias**: the CNR1 body temperature was biased until 28-09-2026 13:00–13:30 LT, when an offset resistor in the logger was replaced. `LWTopC_Avg_biased` and `LWBottomC_Avg_biased` use a rough +3 °C correction; comparing with the CNR4 could estimate the real bias.
-- **Time zones**: iWS times are UTC; the profile mast, CNR1, turb and FLUX files are CEST. All loggers stamp a 30-min average at the end of its interval. Checked against solar noon (11:29 UTC in Utrecht) and by lagged correlation; `notebooks/temperature_plots.ipynb` shows the shifts used.
+- **Time zones**: iWS times are UTC; the profile mast, CNR1, turb and FLUX files are CEST. All loggers stamp a 30-min average at the end of its interval. Checked against solar noon (11:29 UTC in Utrecht) and by lagged correlation: iWS needs +2 h to match the other loggers.
 - **Flow distortion**: the mast and neighbouring sensors disturb the wind for some directions; check sensor ratios against wind direction.
 - **Data periods**: all files cover 15 Sep to 12 Oct 2026. `cnr1raw.csv` and `profile1min.csv` start on 8 Sep, but their values are invalid until 15 Sep 14:01 (see below).
 
@@ -85,8 +85,7 @@ Problems in the documentation:
 ```
 source/      raw data deliveries as received (txt files, column format docs as .docx and .md)
 data/        latest delivery of each data file as CSV with column headers
-notebooks/   analysis notebooks (temperature_plots.ipynb: time series of all temperature sensors)
-figures/     figures saved by the notebooks
+notebooks/   analysis notebooks (MAIO_FluxMast_Temp2.ipynb: temperature, wind and shortwave time series)
 Project_1_Fluxmast_Temperature_sensors_2026.*  project assignment
 Measures_IMAU_Mast.jpeg  photo of the measurement mast
 ```
