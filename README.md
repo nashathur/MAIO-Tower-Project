@@ -89,6 +89,8 @@ Problems in the documentation:
 ## Repository layout
 
 ```
+src/maio_tower/  Python package: load(name) reads a CSV from data/
+pyproject.toml   package definition (pip install)
 source/      raw data deliveries as received (txt files, column format docs as .docx and .md)
 data/        latest delivery of each data file as CSV with column headers
 notebooks/   analysis notebooks
@@ -100,6 +102,28 @@ Measures_IMAU_Mast.jpeg  photo of the measurement mast
 ```
 
 The column definitions are in `source/Data_Tower_project_1-4_15oct2026/fileformat_headers.md`, background literature in `source/Data_Tower_projects_1-4_8oct2026_/MAIO_background&iterature.md`.
+
+## Using the data in Python or Colab
+
+The repository installs as the Python package `maio_tower`, which includes the CSV files in `data/`. In Google Colab, run in a cell:
+
+```python
+!pip install -q git+https://github.com/nashathur/MAIO-Tower-Project.git
+```
+
+Then load any file from `data/` by name:
+
+```python
+import maio_tower
+
+print(maio_tower.DATASETS)          # available files
+profile = maio_tower.load("profile")  # data/profile.csv as a pandas DataFrame
+iws = maio_tower.load("iws")
+```
+
+Extra arguments to `load` go to `pandas.read_csv`. To get data pushed after you installed, restart the Colab runtime and reinstall with `--force-reinstall --no-deps` added.
+
+In a local clone, `pip install -e .` installs the package so that it reads `data/` in the clone directly; `pip install -e ".[notebooks]"` also installs Jupyter.
 
 ## Using this repository on your own PC
 
