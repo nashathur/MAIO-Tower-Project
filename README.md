@@ -88,6 +88,7 @@ data/        latest delivery of each data file as CSV with column headers
 notebooks/   analysis notebooks
              MAIO_FluxMast_Temp2.ipynb: temperature, wind and shortwave time series
              MAIO_Temp_DailyMean.ipynb: long time series and daily mean temperature per dataset
+             MAIO_Temp_HourlyMean.ipynb: hourly mean temperature (mean diurnal cycle) per dataset
 Project_1_Fluxmast_Temperature_sensors_2026.*  project assignment
 Measures_IMAU_Mast.jpeg  photo of the measurement mast
 ```
