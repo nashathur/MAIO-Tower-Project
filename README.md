@@ -8,19 +8,25 @@ Group project for the MAIO course (Utrecht University), Project 1: comparison of
 
 Several sensors on the tower measure temperature at roughly the same height but differ in measurement principle, ventilation and radiation shielding. The project compares their temperatures and relates the differences to wind speed and radiation.
 
+## The flux mast
+
+![MAIO flux mast: sensor heights](figures/flux_mast_simple.png)
+
+Heights are measured on site and rounded. The [complete diagram](figures/flux_mast_complete.png) gives each sensor's height in cm, the data columns each instrument group writes, and the open unknowns. Source files: [`figures/`](figures/) (SVG, editable).
+
 ## Sensors
 
-The tower has five measurement levels at logarithmically increasing heights (8, 4, 2, 1 and 0.5 m).
+The tower has five measurement levels at logarithmically increasing heights, nominally 8, 4, 2, 1 and 0.5 m. Measured on site, the temperature sensors are at about 7.0, 3.9, 2.0, 1.0 and 0.4 m (see the figure above).
 
 | Sensor | Measurement principle | Approx. height (m) | Ventilation and shielding |
 |---|---|---|---|
-| Vaisala HMP110 | Direct air temperature | 0.5, 1, 2, 4, 8 | Mechanically ventilated, shielded |
-| iWS temperature sensor and RH/T sensor | Direct temperature | 4 | Unventilated, inside the nylon iWS housing |
-| Fine-wire thermocouples Tc and Tc2 | Thermoelectric voltage | 4 (Tc), unknown (Tc2) | None |
-| Sonic anemometer (CSAT3) | Speed of sound (sonic temperature Ts) | 4 | None |
+| Vaisala HMP110 | Direct air temperature | 0.4, 1.0, 2.0, 3.9, 7.0 | Mechanically ventilated, shielded (shield type differs between the low levels and 4 m/top; to confirm) |
+| iWS temperature sensor and RH/T sensor | Direct temperature | 3.75 | Unventilated, inside the nylon iWS housing |
+| Fine-wire thermocouples Tc and Tc2 | Thermoelectric voltage | 3.0 (Tc), probably about 3 (Tc2) | None |
+| Sonic anemometer (CSAT3) | Speed of sound (sonic temperature Ts) | 3.0 | None |
 | CNR1 and CNR4 radiometers | Radiometer body temperature | about 4 | Sun shield |
 
-Wind is measured by the sonic anemometer, a Young propeller vane, a vertical propeller and the profile cup anemometers; radiation by the CNR1 (large MAIO logger) and CNR4 (iWS station) net radiometers.
+Wind is measured by the sonic anemometer, a fast Young propeller vane beside it, a vertical propeller and the profile propeller vanes (Young 05103); radiation by the CNR1 (large MAIO logger, on the 4 m crossbar) and CNR4 (iWS station) net radiometers.
 
 ## Approach
 
